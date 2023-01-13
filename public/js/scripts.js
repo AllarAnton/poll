@@ -163,7 +163,9 @@ class Poll {
       button.addEventListener('click', (event) => {
         const parent = event.target.closest('.add-suggestion__block');
 
-        if (Number(parent.dataset.index) === 0) {
+        if (this.suggestionBlocks.length === 1) {
+          const input = this.suggestionBlocks[0].querySelector('input[type="text"]');
+          input.value = '';
           this.suggestionBlocks[0].classList.add('-hidden');
         } else {
           parent.remove();
@@ -218,6 +220,7 @@ class Poll {
     
     clone.dataset.index = cloneIndex + 1;
     clone.querySelector('input').name = cloneInputName.split('-')[0] + '-' + (cloneIndex + 1);
+    clone.querySelector('input').value = ''; 
 
     lastElement.parentElement.insertBefore(clone, this.addSuggestion.parentElement);
     this.removeSuggestionListener();

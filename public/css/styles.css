@@ -75,6 +75,15 @@ p {
 	hyphens: auto;
 }
 
+a {
+	text-decoration: underline;
+	color: inherit;
+}
+
+a:hover {
+	color: #355E3B;
+}
+
 .input-group,
 .list__wrapper ul > li {
 	display: flex;

@@ -307,7 +307,7 @@ p.comment {
 }
 
 @media screen and (max-width: 767px) {
-	ul,
+	#poll-content ul,
 	.add-suggestion__wrapper {
 		margin-left: 0;
 	}

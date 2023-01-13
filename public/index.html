@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Knowledge sharing / workshops poll</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <main class="page-content">
+        <div class="page-content__wrapper">
+          <h1>Knowledge sharing / workshops poll</h1>
+          <p>
+            <strong>Idea for first topic</strong>, was to do <mark>JavaScript 101 (ES6) + UI elements tricks and tips + Creating your own UI element in iBank</mark>, all together, 
+            as they are all related and most likely to be something that you will need to do on a daily basis.
+          </p>
+          <div id="poll-content">
+            <h4>So if that interests you, then vote which of those you want to know about the most, plus in addition any other topics that interests you.</h4>
+            <div class="list__wrapper">
+              <ul id="topics"></ul>
+            </div>
+        
+            <h4 id="suggestions-title" class="-hidden">Or maybe these other suggestion(s) interest you...</h4>
+            <div class="list__wrapper -hidden">
+              <ul id="suggestions"></ul>
+            </div>
+
+            <div class="add-suggestion__wrapper">
+              <div class="add-suggestion__block -hidden" data-index="0">
+                <div class="input-group">
+                  <input type="text" name="suggestion-0" minlength="1" maxlength="300" placeholder="Your suggestion"/>
+              
+                  <button type="button" class="remove-suggestion">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M7 21q-.825 0-1.412-.587Q5 19.825 5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413Q17.825 21 17 21ZM17 6H7v13h10ZM9 17h2V8H9Zm4 0h2V8h-2ZM7 6v13Z"/></svg>
+                    <span>Remove</span>
+                  </button>
+                </div>
+              </div>
+              <div class="add-suggestion__button">
+                <button type="button" id="add-suggestion">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M13 14h2v-3h3V9h-3V6h-2v3h-3v2h3Zm-5 4q-.825 0-1.412-.587Q6 16.825 6 16V4q0-.825.588-1.413Q7.175 2 8 2h12q.825 0 1.413.587Q22 3.175 22 4v12q0 .825-.587 1.413Q20.825 18 20 18Zm0-2h12V4H8v12Zm-4 6q-.825 0-1.412-.587Q2 20.825 2 20V6h2v14h14v2ZM8 4v12V4Z"/></svg>
+                  <span>Add a new suggestion</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="buttonbar__wrapper">
+              <button type="button" class="button" id="submit-button">Vote</button>
+            </div>
+          </div>
+
+          <div class="results__wrapper -hidden" id="results">
+            <div class="results-columns__wrapper">
+              <div class="graph__wrapper">
+                <h3>Votes (your votes are in bold)</h3>
+                <div class="graph__container">
+                  <canvas id="graph"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="buttonbar__wrapper">
+              <button type="button" class="button" id="vote-again-button">Vote again</button>
+            </div>
+          </div>
+
+          <p class="comment">
+            This poll page is basically a CRUD application - you can create your own suggestion, read the default and suggestions added by others, 
+            update the topics by voting (updating votes count) and when having added a suggestion you can also delete it. 
+            But also the page also acts kind of like an API, as all the action are done by the API, not page submit.
+            With also some additional features, like token creating so that only the user who added their suggestion can delete it and access token control,
+            if no token, then you cannot access the page.
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/scripts.js" type="text/javascript"></script>
+  </body>
+</html>
